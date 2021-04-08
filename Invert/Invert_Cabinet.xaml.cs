@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using MaterialDesignThemes.Wpf;
 namespace Invert
 {
     /// <summary>
@@ -19,9 +19,15 @@ namespace Invert
     /// </summary>
     public partial class Invert_Cabinet : Window
     {
+        gr691_invert db;
         public Invert_Cabinet()
         {
             InitializeComponent();
+        }
+
+        private void fgdfg(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("grg");
         }
     }
 }

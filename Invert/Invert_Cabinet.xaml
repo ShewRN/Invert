@@ -6,25 +6,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Invert"
         mc:Ignorable="d"
-        Title="Инвентаризация" Width="1057" Loaded="Window_Loaded">
+        Title="Инвентаризация" Width="905.5" Height="484">
     <Grid>
         <TabControl Margin="0,1,0,0" Background="#FFFFFCFC" >
             <TabItem Header="Кабинеты">
                 <Canvas Margin="0,0,-9,0">
-                    <DataGrid Name="Cou_Schedule" HorizontalAlignment="Left" Height="436" AutoGenerateColumns="False" VerticalAlignment="Top" Width="634" Canvas.Top="5" FontSize="12">
+                    <DataGrid Name="Cou_Schedule" HorizontalAlignment="Left" Height="414" AutoGenerateColumns="False" VerticalAlignment="Top" Width="478" Canvas.Top="10" FontSize="12" Canvas.Left="414">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Cou_Date_Schedule.date_sch,StringFormat={}{0:dd.MM.yyyy}}" Header="Дата" Width="100"/>
-                            <DataGridTextColumn Binding="{Binding time_sch}" Header="Время" Width="110"/>
-                            <DataGridTextColumn Binding="{Binding Cou_Group.number}" Header="Группа" Width="80"/>
-                            <DataGridTextColumn Binding="{Binding Cou_Teacher_Predmet.Cou_Predmet.name_p}" Header="Предмет" Width="120"/>
-                            <DataGridTextColumn Binding="{Binding Cou_Teacher_Predmet.Cou_Teacher.last_name}" Header="Преподаватель" Width="120"/>
-                            <DataGridTextColumn Binding="{Binding cabinet}" Header="Кабинет" Width="110"/>
+                            <DataGridTextColumn Binding="{Binding Cou_Date_Schedule.date_sch,StringFormat={}{0:dd.MM.yyyy}}" Header="Номер" Width="300" FontWeight="Medium" />
+                            <DataGridTextColumn Binding="{Binding time_sch}" Header="Кабинет" Width="110"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <ComboBox  Name="Cb_Sch_date" materialDesign:HintAssist.Hint="Дата" Canvas.Left="743" Canvas.Top="111" Width="142"  DisplayMemberPath="date_sch" ItemStringFormat="{}{0:dd.MM.yyyy}" SelectionChanged="Cb_Sch_date_SelectionChanged"/>
+                    <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="90" Foreground="#DDFFFFFF" Click="fgdfg" Background="White">
+                        <materialDesign:PackIcon Kind="Monitor" Foreground="Black" Width="30" Height="28" />
+                    </Button>
+                    <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="221" Background="White">
+                        <materialDesign:PackIcon Kind="Desk" Foreground="Black" Width="30" Height="28" />
+                    </Button>
+                    <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="157" Background="White">
+                        <materialDesign:PackIcon Kind="Chair" Foreground="Black" Width="30" Height="28" />
+                    </Button>
+                    <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="284" Background="White">
+                        <materialDesign:PackIcon Kind="DesktopTower" Foreground="Black" Width="30" Height="28" />
+                    </Button>
+                    <ComboBox  Name="Cb_Sch_date" materialDesign:HintAssist.Hint="Кабинет" Canvas.Left="184" Canvas.Top="32" Width="142"  DisplayMemberPath="date_sch"/>
+                    <TextBlock Name="Result" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="99"/>
+                    <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="92"/>
+                    <TextBlock x:Name="Result_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="171"/>
+                    <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="163"/>
+                    <TextBlock x:Name="Result_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="234"/>
+                    <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="226"/>
+                    <TextBlock x:Name="Result_Copy2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="296"/>
+                    <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="288"/>
                 </Canvas>
             </TabItem>
-            <TabItem Header="Студенты">
+            <TabItem Header="Общее редактирование">
                 <Canvas>
                     <DataGrid Name="Cou_Student" HorizontalAlignment="Left" Height="437" AutoGenerateColumns="False" VerticalAlignment="Top" Width="619" Canvas.Top="4">
                         <DataGrid.Columns>
@@ -34,14 +50,10 @@
                             <DataGridTextColumn Binding="{Binding Cou_Group.number}" Header="Группа" Width="1*"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <TextBox  Name="Student_last" materialDesign:HintAssist.Hint="Фамилия" TextWrapping="Wrap" Width="141" Canvas.Left="731" Canvas.Top="139"/>
-                    <TextBox  Name="Student_first" materialDesign:HintAssist.Hint="Имя" TextWrapping="Wrap"  Width="141" Canvas.Left="731" Canvas.Top="174"/>
-                    <TextBox  Name="Student_middle" materialDesign:HintAssist.Hint="Отчество" TextWrapping="Wrap"  Width="141" Canvas.Left="731" Canvas.Top="208"/>
-                    <ComboBox  Name="Cb_S_group" materialDesign:HintAssist.Hint="Группа" Canvas.Left="731" Canvas.Top="244" Width="141" DisplayMemberPath="number" SelectionChanged="Cb_S_group_SelectionChanged"/>
-                    <Button Content="Добавить" Height="28" Width="112" Canvas.Left="646" Canvas.Top="338"  Click="Student_Insert"/>
-                    <Button Content="Изменить" Height="28" Width="112" Canvas.Left="776" Canvas.Top="338" Click="Student_Update"/>
-                    <Button Content="Удалить" Height="28" Width="112" Canvas.Left="907" Canvas.Top="338" Click="Student_Delete"/>
-                    <Button Content="+" Height="38" Width="42" Canvas.Left="885" Canvas.Top="242"  Click="Student_Group_Add"  FontSize="18" Background="#FF673AB7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Times New Roman"/>
+                    <ComboBox  Name="Cb_S_group" materialDesign:HintAssist.Hint="Группа" Canvas.Left="700" Canvas.Top="242" Width="141" DisplayMemberPath="number"/>
+                    <Button Content="Добавить" Height="28" Width="112" Canvas.Left="646" Canvas.Top="338"/>
+                    <Button Content="Изменить" Height="28" Width="112" Canvas.Left="776" Canvas.Top="338"/>
+                    <Button Content="Удалить" Height="28" Width="112" Canvas.Left="700" Canvas.Top="413"/>
                 </Canvas>
             </TabItem>
         </TabControl>
