@@ -20,43 +20,31 @@ namespace Invert
     /// </summary>
     public partial class MainWindow : Window
     {
-        Model1Container db;
+        gr691_invert db;
         public MainWindow()
         {
             InitializeComponent();
-            db = new Model1Container();
+            db = new gr691_invert();
         }
 
         private void Auth_Enter(object sender, RoutedEventArgs e)
         {
-            var authorization = db.Users.FirstOrDefault(l => l.login_u == Auth_Login.Text && l.password_u == Auth_Password.Password);
-            Meth_Auth meth_auth = new Meth_Auth();
-            if (meth_auth.Enter(Auth_Login.Text, Auth_Password.Password) == true)
+            if (Auth_Login.Text == "" || Auth_Password.Password == "")
             {
-                switch (authorization.id_role)
-                {
-                    case 1:
-                        MessageBox.Show("Вход выполнен", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-                        Hide();
-                        new Admin_Home().ShowDialog();
-                        Application.Current.Shutdown();
-                        break;
-                    case 2:
-                        MessageBox.Show("Вход выполнен", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-                        Hide();
-                        new Manager_Home().ShowDialog();
-                        Application.Current.Shutdown();
-                        break;
-                    case 3:
-                        MessageBox.Show("Вход выполнен", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-                        Hide();
-                        usr = authorization;
-                        new Windows.Teacher_Schedule().ShowDialog();
-                        Application.Current.Shutdown();
-                        break;
-                }
+                MessageBox.Show("Вы не заполнили все поля", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            var auth_check = db.Users.FirstOrDefault(ch => ch.login == Auth_Login.Text && ch.password == Auth_Password.Password);
+            if (auth_check == null)
+            {
+                MessageBox.Show("Логин или пароль введены не верно", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                MessageBox.Show("Вход выполнен", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
+                Hide();
+                new Invert_Cabinet().ShowDialog();
+                Application.Current.Shutdown();
             }
         }
-
     }
 }

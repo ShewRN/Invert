@@ -13,10 +13,10 @@ namespace Invert
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Model1Container : DbContext
+    public partial class gr691_invert : DbContext
     {
-        public Model1Container()
-            : base("name=Model1Container")
+        public gr691_invert()
+            : base("name=gr691_invert")
         {
         }
     
