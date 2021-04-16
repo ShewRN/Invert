@@ -13,10 +13,10 @@ namespace Invert
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class gr691_invert : DbContext
+    public partial class Database1Entities : DbContext
     {
-        public gr691_invert()
-            : base("name=gr691_invert")
+        public Database1Entities()
+            : base("name=Database1Entities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace Invert
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Equipment> Equipments { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
