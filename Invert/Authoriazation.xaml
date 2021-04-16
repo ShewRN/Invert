@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Invert"
         mc:Ignorable="d"
-        Title="Инвентаризация" Height="438.495" Width="307.646">
+        Title="Инвентаризация" Height="438.495" Width="307.646" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button IsDefault = "True" Content="Войти" Height="27" Width="110" Canvas.Left="584" Canvas.Top="242"  Click="Auth_Enter" Margin="92,295,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <TextBox Name="Auth_Login" materialDesign:HintAssist.Hint="Логин" TextWrapping="Wrap"  Width="141" Canvas.Left="617" Canvas.Top="53" Margin="77,150,0,0" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top"/>

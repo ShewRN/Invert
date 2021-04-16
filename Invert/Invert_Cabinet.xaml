@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Invert"
         mc:Ignorable="d"
-        Title="Инвентаризация" Width="905.5" Height="484" Loaded="Window_Loaded">
+        Title="Инвентаризация" Width="905.5" Height="484" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl Margin="0,1,0,0" Background="#FFFFFCFC" >
             <TabItem Header="Кабинеты">

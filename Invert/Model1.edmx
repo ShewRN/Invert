@@ -11,11 +11,9 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="inv_num" Type="nchar" MaxLength="100" />
-          <Property Name="cabiner" Type="nchar" MaxLength="10" />
+          <Property Name="cabinet" Type="nchar" MaxLength="10" />
           <Property Name="indef" Type="nchar" MaxLength="10" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "Z:\ИСРПО\ЛАБА 6\INVERT\INVERT\DATABASE1.MDF.dbo.User" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="id" />
@@ -26,13 +24,7 @@
         </EntityType>
         <EntityContainer Name="Хранилище Database1ModelContainer">
           <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [User].[id] AS [id], 
-    [User].[login] AS [login], 
-    [User].[password] AS [password]
-    FROM [dbo].[User] AS [User]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -48,7 +40,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="inv_num" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="cabiner" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="cabinet" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="indef" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="User">
@@ -59,7 +51,7 @@
           <Property Name="login" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -69,7 +61,7 @@
             <EntityTypeMapping TypeName="Database1Model.Equipment">
               <MappingFragment StoreEntitySet="Equipment">
                 <ScalarProperty Name="indef" ColumnName="indef" />
-                <ScalarProperty Name="cabiner" ColumnName="cabiner" />
+                <ScalarProperty Name="cabinet" ColumnName="cabinet" />
                 <ScalarProperty Name="inv_num" ColumnName="inv_num" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

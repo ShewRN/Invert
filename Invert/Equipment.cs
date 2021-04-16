@@ -16,7 +16,7 @@ namespace Invert
     {
         public int id { get; set; }
         public string inv_num { get; set; }
-        public string cabiner { get; set; }
+        public string cabinet { get; set; }
         public string indef { get; set; }
     }
 }
