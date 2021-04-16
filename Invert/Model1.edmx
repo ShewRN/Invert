@@ -30,7 +30,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true" >
+        <EntityContainer Name="gr691_invert" annotation:LazyLoadingEnabled="true" >
           <EntitySet Name="Equipments" EntityType="Database1Model.Equipment" />
           <EntitySet Name="Users" EntityType="Database1Model.User" />
         </EntityContainer>
@@ -56,7 +56,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Database1ModelContainer" CdmEntityContainer="Database1Entities" >
+        <EntityContainerMapping StorageEntityContainer="Хранилище Database1ModelContainer" CdmEntityContainer="gr691_invert" >
           <EntitySetMapping Name="Equipments">
             <EntityTypeMapping TypeName="Database1Model.Equipment">
               <MappingFragment StoreEntitySet="Equipment">

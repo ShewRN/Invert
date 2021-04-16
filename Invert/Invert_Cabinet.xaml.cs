@@ -19,11 +19,11 @@ namespace Invert
     /// </summary>
     public partial class Invert_Cabinet : Window
     {
-        Database1Entities db;
+        gr691_invert db;
         public Invert_Cabinet()
         {
             InitializeComponent();
-            db = new Database1Entities();
+            db = new gr691_invert();
         }
         //ВКЛАДКА КАБИНЕТОВ
         private void Cb_Cabinet_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -83,7 +83,7 @@ namespace Invert
         //ЗАГРУЗКА ДАННЫХ В ТАБЛИЦАХ
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            db = new Database1Entities();
+            db = new gr691_invert();
             //вывод таблицы
         }
 

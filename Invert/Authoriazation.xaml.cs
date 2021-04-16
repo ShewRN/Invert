@@ -20,11 +20,11 @@ namespace Invert
     /// </summary>
     public partial class MainWindow : Window
     {
-        Database1Entities db;
+        gr691_invert db;
         public MainWindow()
         {
             InitializeComponent();
-            db = new Database1Entities();
+            db = new gr691_invert();
         }
 
         private void Auth_Enter(object sender, RoutedEventArgs e)
