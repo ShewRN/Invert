@@ -31,8 +31,8 @@
     <edmx:ConceptualModels>
       <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="gr691_invert" annotation:LazyLoadingEnabled="true" >
-          <EntitySet Name="Equipments" EntityType="Database1Model.Equipment" />
-          <EntitySet Name="Users" EntityType="Database1Model.User" />
+          <EntitySet Name="Equipment" EntityType="Database1Model.Equipment" />
+          <EntitySet Name="User" EntityType="Database1Model.User" />
         </EntityContainer>
         <EntityType Name="Equipment">
           <Key>
@@ -57,7 +57,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище Database1ModelContainer" CdmEntityContainer="gr691_invert" >
-          <EntitySetMapping Name="Equipments">
+          <EntitySetMapping Name="Equipment">
             <EntityTypeMapping TypeName="Database1Model.Equipment">
               <MappingFragment StoreEntitySet="Equipment">
                 <ScalarProperty Name="indef" ColumnName="indef" />
@@ -67,7 +67,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Users">
+          <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="Database1Model.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="password" ColumnName="password" />
@@ -89,7 +89,7 @@
     </Connection>
     <Options>
       <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="ValidateOnBuild" Value="True" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />

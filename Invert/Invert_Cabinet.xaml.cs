@@ -19,14 +19,22 @@ namespace Invert
     /// </summary>
     public partial class Invert_Cabinet : Window
     {
-        gr691_invert db;
+        public gr691_invert db;
         public Invert_Cabinet()
         {
             InitializeComponent();
             db = new gr691_invert();
+            List<Equipment> us = db.Database.SqlQuery<Equipment>("Select*from Equipment Where indef = 'MN'").ToList();
+            Monitor_Count.Text = Convert.ToString(us.Count);
+            us = db.Database.SqlQuery<Equipment>("Select*from Equipment Where indef = 'CR'").ToList();
+            Chair_Count.Text = Convert.ToString(us.Count);
+            us = db.Database.SqlQuery<Equipment>("Select*from Equipment Where indef = 'DK'").ToList();
+            Table_Count.Text = Convert.ToString(us.Count);
+            us = db.Database.SqlQuery<Equipment>("Select*from Equipment Where indef = 'PC'").ToList();
+            Computer_Case_Count.Text = Convert.ToString(us.Count);
         }
         //ВКЛАДКА КАБИНЕТОВ
-        private void Cb_Cabinet_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void Cb_Cabinet_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (Cb_Cabinet_1.SelectedIndex == 0)
             {

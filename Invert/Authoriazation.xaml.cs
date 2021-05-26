@@ -20,21 +20,23 @@ namespace Invert
     /// </summary>
     public partial class MainWindow : Window
     {
-        gr691_invert db;
+        public gr691_invert db;
         public MainWindow()
         {
             InitializeComponent();
             db = new gr691_invert();
-        }
 
+        }
+        
         private void Auth_Enter(object sender, RoutedEventArgs e)
         {
+
             if (Auth_Login.Text == "" || Auth_Password.Password == "")
             {
                 MessageBox.Show("Вы не заполнили все поля", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            var auth_check = db.Users.FirstOrDefault(ch => ch.login == Auth_Login.Text && ch.password == Auth_Password.Password);
+            var auth_check = db.User.FirstOrDefault(ch => ch.login == Auth_Login.Text && ch.password == Auth_Password.Password);
             if (auth_check == null)
             {
                 MessageBox.Show("Логин или пароль введены не верно", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);

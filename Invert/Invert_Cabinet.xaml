@@ -36,13 +36,13 @@
                         <TextBlock>Кабинет 3</TextBlock>
                     </ComboBox>
 
-                    <TextBlock Name="Monitor_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="99"/>
+                    <TextBlock x:Name="Monitor_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="99"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="92"/>
-                    <TextBlock Name="Chair_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="171"/>
+                    <TextBlock x:Name="Chair_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="171"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="163"/>
-                    <TextBlock Name="Table_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="234"/>
+                    <TextBlock x:Name="Table_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="234"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="226"/>
-                    <TextBlock Name="Computer_Case_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="296"/>
+                    <TextBlock x:Name="Computer_Case_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="296"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="288"/>
                 </Canvas>
             </TabItem>
