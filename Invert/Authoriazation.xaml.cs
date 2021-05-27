@@ -35,6 +35,7 @@ namespace Invert
         {
             if (Auth_Login.Text == "" || Auth_Password.Password == "")
             {
+                PopupNotifier popup = new PopupNotifier();
                 popup.ContentText = "Не все поля заполнены";
                 popup.Popup();
                 return;
