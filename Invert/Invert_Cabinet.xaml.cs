@@ -87,5 +87,9 @@ namespace Invert
             //вывод таблицы
         }
 
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

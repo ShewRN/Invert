@@ -6,12 +6,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Invert"
         mc:Ignorable="d"
-        Title="Инвентаризация" Width="905.5" Height="484" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="Инвентаризация" Width="905.5" Height="484" Loaded="Window_Loaded"  AllowsTransparency="True" Background="Transparent" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TabControl Margin="0,1,0,0" Background="#FFFFFCFC" >
+        <Button Height="Auto" Panel.ZIndex="1" Click="Exit" Margin="848,0,2,450" Background="Transparent" BorderThickness="0" Canvas.Left="838" Canvas.Top="-35">
+            <materialDesign:PackIcon Kind="CloseCircle" Foreground="Red" Width="24" Height="32"  />
+        </Button>
+
+        <Border Background="White" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="906" CornerRadius="20,20,20,20" RenderTransformOrigin="2.784,-2.135" Margin="0,1,0,0"/>
+        <TabControl Margin="10"  Background="#FFFFFCFC" >
             <TabItem Header="Кабинеты">
                 <Canvas Margin="0,0,-9,0">
-                    <DataGrid Name="Table_Cabinet" HorizontalAlignment="Left" Height="424" AutoGenerateColumns="False" VerticalAlignment="Top" Width="478" FontSize="12" Canvas.Left="414" IsReadOnly="True">
+                    <DataGrid Name="Table_Cabinet" HorizontalAlignment="Left" Height="424" AutoGenerateColumns="False" VerticalAlignment="Top" Width="465" FontSize="12" Canvas.Left="414" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Cou_Date_Schedule}" Header="                                Номер" Width="300" FontWeight="Medium" />
                             <DataGridTextColumn Binding="{Binding time_sch}" Header="             Кабинет" Width="200"/>
