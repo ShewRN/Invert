@@ -11,10 +11,10 @@
         <TabControl Margin="0,1,0,0" Background="#FFFFFCFC" >
             <TabItem Header="Кабинеты">
                 <Canvas Margin="0,0,-9,0">
-                    <DataGrid Name="Table_Cabinet" HorizontalAlignment="Left" Height="424" AutoGenerateColumns="False" VerticalAlignment="Top" Width="478" FontSize="12" Canvas.Left="414" IsReadOnly="True">
+                    <DataGrid Name="Table_Cabinet" HorizontalAlignment="Left" Height="424" AutoGenerateColumns="False" VerticalAlignment="Top" Width="478" FontSize="12" Canvas.Left="414" IsReadOnly="True" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Cou_Date_Schedule}" Header="                                Номер" Width="300" FontWeight="Medium" />
-                            <DataGridTextColumn Binding="{Binding time_sch}" Header="             Кабинет" Width="200"/>
+                            <DataGridTextColumn Binding="{Binding inv_num}" Header="                                Номер" Width="300" FontWeight="Medium" />
+                            <DataGridTextColumn Binding="{Binding cabinet}" Header="             Кабинет" Width="200"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="90" Click="Monitor_Click" Background="White">
@@ -36,7 +36,7 @@
                         <TextBlock>Кабинет 3</TextBlock>
                     </ComboBox>
 
-                    <TextBlock x:Name="Monitor_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="99"/>
+                    <Label Name="Monitor_Count" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="99"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="92"/>
                     <TextBlock x:Name="Chair_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="171"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="163"/>

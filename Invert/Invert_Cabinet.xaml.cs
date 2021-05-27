@@ -25,34 +25,57 @@ namespace Invert
             InitializeComponent();
             db = new gr691_invert();
             List<Equipment> us = db.Database.SqlQuery<Equipment>("Select*from Equipment Where indef = 'MN'").ToList();
-            Monitor_Count.Text = Convert.ToString(us.Count);
+            //Monitor_Count.Content = Convert.ToString(us.Count);
             us = db.Database.SqlQuery<Equipment>("Select*from Equipment Where indef = 'CR'").ToList();
-            Chair_Count.Text = Convert.ToString(us.Count);
+            
             us = db.Database.SqlQuery<Equipment>("Select*from Equipment Where indef = 'DK'").ToList();
             Table_Count.Text = Convert.ToString(us.Count);
             us = db.Database.SqlQuery<Equipment>("Select*from Equipment Where indef = 'PC'").ToList();
+            List<Equipment> ps = db.Equipment.Where(db => db.indef == "CR").ToList();
+            Chair_Count.Text = Convert.ToString(ps.Count);
             Computer_Case_Count.Text = Convert.ToString(us.Count);
+
+            Table_Cabinet.ItemsSource = db.Equipment.ToList();
         }
         //ВКЛАДКА КАБИНЕТОВ
-        public void Cb_Cabinet_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Cb_Cabinet_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            db = new gr691_invert();
+            
             if (Cb_Cabinet_1.SelectedIndex == 0)
             {
-                //показать полный список
-                //скорее всего, нужно тупо сложить кол-во оборудования во всех кабинетах
+                string str = db.Equipment.Where(w => w.indef == "MN").Count().ToString();
+                MessageBox.Show(str);
+                Monitor_Count.Content = Convert.ToString(str);
+                Chair_Count.Text = db.Equipment.Where(db => db.indef == "CR").Count().ToString();
+                Table_Count.Text = db.Equipment.Where(db => db.indef == "DK").Count().ToString();
+                Computer_Case_Count.Text = db.Equipment.Where(db => db.indef == "PC").Count().ToString();
+                Table_Cabinet.ItemsSource = db.Equipment.ToList();
             }
-            else if (Cb_Cabinet_1.SelectedIndex == 1)
-            {
-                //показать список оборудования кабинета 1
-            }
-            else if (Cb_Cabinet_1.SelectedIndex == 2)
-            {
-                //показать список оборудования кабинета 2
-            }
-            else if (Cb_Cabinet_1.SelectedIndex == 3)
-            {
-                //показать список оборудования кабинета 3
-            }
+            //else if (Cb_Cabinet_1.SelectedIndex == 1)
+            //{
+            //    Monitor_Count.Text = db.Equipment.Where(db => db.indef == "MC" && db.cabinet == "1").Count().ToString();
+            //    Chair_Count.Text = db.Equipment.Where(db => db.indef == "CR" && db.cabinet == "1").Count().ToString();
+            //    Table_Count.Text = db.Equipment.Where(db => db.indef == "DK" && db.cabinet == "1").Count().ToString();
+            //    Computer_Case_Count.Text = db.Equipment.Where(db => db.indef == "PC" && db.cabinet == "1").Count().ToString();
+            //    Table_Cabinet.ItemsSource = db.Equipment.Where(d=> d.cabinet == "1").ToList();
+            //}
+            //else if (Cb_Cabinet_1.SelectedIndex == 2)
+            //{
+            //    Monitor_Count.Text = db.Equipment.Where(db => db.indef == "MC" && db.cabinet == "2").Count().ToString();
+            //    Chair_Count.Text = db.Equipment.Where(db => db.indef == "CR" && db.cabinet == "2").Count().ToString();
+            //    Table_Count.Text = db.Equipment.Where(db => db.indef == "DK" && db.cabinet == "2").Count().ToString();
+            //    Computer_Case_Count.Text = db.Equipment.Where(db => db.indef == "PC" && db.cabinet == "2").Count().ToString();
+            //    Table_Cabinet.ItemsSource = db.Equipment.Where(d => d.cabinet == "2").ToList();
+            //}
+            //else if (Cb_Cabinet_1.SelectedIndex == 3)
+            //{
+            //    Monitor_Count.Text = db.Equipment.Where(db => db.indef == "MC" && db.cabinet == "3").Count().ToString();
+            //    Chair_Count.Text = db.Equipment.Where(db => db.indef == "CR" && db.cabinet == "3").Count().ToString();
+            //    Table_Count.Text = db.Equipment.Where(db => db.indef == "DK" && db.cabinet == "3").Count().ToString();
+            //    Computer_Case_Count.Text = db.Equipment.Where(db => db.indef == "PC" && db.cabinet == "3").Count().ToString();
+            //    Table_Cabinet.ItemsSource = db.Equipment.Where(d => d.cabinet == "3").ToList();
+            //}
         }
         private void Monitor_Click(object sender, RoutedEventArgs e)
         {
