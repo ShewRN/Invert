@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Tulpep.NotificationWindow;
 using System.Drawing;
+using Color = System.Drawing.Color;
 
 namespace Invert
 {
