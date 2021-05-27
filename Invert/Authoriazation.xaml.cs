@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tulpep.NotificationWindow;
+using System.Drawing;
+using Color = System.Drawing.Color;
 
 namespace Invert
 {
@@ -30,10 +33,11 @@ namespace Invert
         
         private void Auth_Enter(object sender, RoutedEventArgs e)
         {
-
             if (Auth_Login.Text == "" || Auth_Password.Password == "")
             {
-                MessageBox.Show("Вы не заполнили все поля", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+                PopupNotifier popup = new PopupNotifier();
+                popup.ContentText = "Не все поля заполнены";
+                popup.Popup();
                 return;
             }
             var auth_check = db.User.FirstOrDefault(ch => ch.login == Auth_Login.Text && ch.password == Auth_Password.Password);
@@ -44,11 +48,14 @@ namespace Invert
             }
             else
             {
-                MessageBox.Show("Вход выполнен", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
                 Hide();
                 new Invert_Cabinet().ShowDialog();
-                Application.Current.Shutdown();
             }
+        }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
