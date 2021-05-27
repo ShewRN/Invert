@@ -47,8 +47,8 @@ namespace Invert
             }
         }
         private void Monitor_Click(object sender, RoutedEventArgs e)
-        {
-
+        {        
+            //MessageBox.Show(db.User.id)
         }
 
         private void Table_Click(object sender, RoutedEventArgs e)
@@ -86,6 +86,9 @@ namespace Invert
             db = new gr691_invert();
             //вывод таблицы
         }
-
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
