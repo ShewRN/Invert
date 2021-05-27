@@ -29,14 +29,8 @@
                     <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="284" Click="Computer_Case_Click" Background="White">
                         <materialDesign:PackIcon Kind="DesktopTower" Foreground="Black" Width="30" Height="28" />
                     </Button>
-                    <ComboBox  Name="Cb_Cabinet_1" SelectedIndex="0" SelectionChanged="Cb_Cabinet_1_SelectionChanged" Canvas.Left="198" Canvas.Top="32" Width="154">
-                        <TextBlock>Общая инвентаризация</TextBlock>
-                        <TextBlock>Кабинет 1</TextBlock>
-                        <TextBlock>Кабинет 2</TextBlock>
-                        <TextBlock>Кабинет 3</TextBlock>
-                    </ComboBox>
 
-                    <Label Name="Monitor_Count" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="99"/>
+                    <TextBlock Name="Monitor_Count" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" FontSize="18" Canvas.Left="160" Canvas.Top="99" Height="34"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="92"/>
                     <TextBlock x:Name="Chair_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="171"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="163"/>
@@ -44,6 +38,13 @@
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="226"/>
                     <TextBlock x:Name="Computer_Case_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="296"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="288"/>
+                    <ComboBox  Name="Cb_Cabinet_1" SelectedIndex="0" SelectionChanged="Cb_Cabinet_1_SelectionChanged" Canvas.Left="198" Canvas.Top="32" Width="154">
+                        <TextBlock>Общая инвентаризация</TextBlock>
+                        <TextBlock>Кабинет 1</TextBlock>
+                        <TextBlock>Кабинет 2</TextBlock>
+                        <TextBlock>Кабинет 3</TextBlock>
+                    </ComboBox>
+
                 </Canvas>
             </TabItem>
             <TabItem Header="Общее редактирование">
