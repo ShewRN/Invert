@@ -25,7 +25,7 @@ namespace Invert
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Equipment> Equipments { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Equipment> Equipment { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }
