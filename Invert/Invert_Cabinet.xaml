@@ -18,8 +18,8 @@
                 <Canvas Margin="0,0,-9,0">
                     <DataGrid Name="Table_Cabinet" HorizontalAlignment="Left" Height="424" AutoGenerateColumns="False" VerticalAlignment="Top" Width="465" FontSize="12" Canvas.Left="414" IsReadOnly="True">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Cou_Date_Schedule}" Header="                                Номер" Width="300" FontWeight="Medium" />
-                            <DataGridTextColumn Binding="{Binding time_sch}" Header="             Кабинет" Width="200"/>
+                            <DataGridTextColumn Binding="{Binding inv_num}" Header="                                Номер" Width="300" FontWeight="Medium" />
+                            <DataGridTextColumn Binding="{Binding cabinet}" Header="             Кабинет" Width="200"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="90" Click="Monitor_Click" Background="White">
