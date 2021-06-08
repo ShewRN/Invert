@@ -43,7 +43,8 @@ namespace Invert
             var auth_check = db.User.FirstOrDefault(ch => ch.login == Auth_Login.Text && ch.password == Auth_Password.Password);
             if (auth_check == null)
             {
-                MessageBox.Show("Логин или пароль введены не верно", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+                popup.ContentText = "Логин или пароль введены не верно";
+                popup.Popup();
                 return;
             }
             else
