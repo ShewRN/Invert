@@ -41,37 +41,26 @@
                         <TextBlock>Кабинет 3</TextBlock>
                     </ComboBox>
 
-                    <TextBlock x:Name="Monitor_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="99"/>
+                    <TextBlock Name="Monitor_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="99"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="92"/>
-                    <TextBlock x:Name="Chair_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="171"/>
+                    <TextBlock Name="Chair_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="171"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="163"/>
-                    <TextBlock x:Name="Table_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="234"/>
+                    <TextBlock Name="Table_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="234"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="226"/>
-                    <TextBlock x:Name="Computer_Case_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="296"/>
+                    <TextBlock Name="Computer_Case_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="18" Canvas.Left="160" Canvas.Top="296"/>
                     <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="288"/>
                 </Canvas>
             </TabItem>
             <TabItem Header="Общее редактирование">
                 <Canvas>
-                    <DataGrid Name="Table_Editing" HorizontalAlignment="Left" Height="424" AutoGenerateColumns="False" VerticalAlignment="Top" Width="466" FontSize="12" Canvas.Left="414" IsReadOnly="True">
+                    <DataGrid Name="Table_Editing" HorizontalAlignment="Left" Height="424" AutoGenerateColumns="False" VerticalAlignment="Top" Width="478" FontSize="12" Canvas.Left="414" IsReadOnly="True">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding inv_num}" Header="Номер" Width="150" FontWeight="Medium" />
-                            <DataGridTextColumn Binding="{Binding cabinet}" Header="Кабинет" Width="150" FontWeight="Medium"/>
-                            <DataGridTextColumn Binding="{Binding indef}" Header="Оборудование" Width="150" FontWeight="Medium"/>
+                            <DataGridTextColumn Binding="{Binding Cou_Date_Schedule}" Header="                                Номер" Width="300" FontWeight="Medium" />
+                            <DataGridTextColumn Binding="{Binding time_sch}" Header="             Кабинет" Width="300" FontWeight="Medium"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <ComboBox  Name="Cb_Equipment" materialDesign:HintAssist.Hint="Оборудование" Canvas.Left="132" Canvas.Top="105" Width="141">
-                        <TextBlock>Монитор</TextBlock>
-                        <TextBlock>Стол</TextBlock>
-                        <TextBlock>Стул</TextBlock>
-                        <TextBlock>Компьютер</TextBlock>
-                    </ComboBox>
-
-                    <ComboBox  Name="Cb_Cabinet_2" materialDesign:HintAssist.Hint="Кабинет" Canvas.Left="132" Canvas.Top="172" Width="141">
-                        <TextBlock>1</TextBlock>
-                        <TextBlock>2</TextBlock>
-                        <TextBlock>3</TextBlock>
-                    </ComboBox>
+                    <ComboBox  Name="Cb_Equipment" materialDesign:HintAssist.Hint="Оборудование" Canvas.Left="132" Canvas.Top="105" Width="141" DisplayMemberPath="number"/>
+                    <ComboBox  Name="Cb_Cabinet_2" materialDesign:HintAssist.Hint="Кабинет" Canvas.Left="132" Canvas.Top="172" Width="141" DisplayMemberPath="number"/>
                     <Button Content="Добавить" Height="28" Width="112" Canvas.Left="25" Canvas.Top="332" Click="Insert"/>
                     <Button Content="Изменить" Height="28" Width="112" Canvas.Left="297" Canvas.Top="332" Click="Update"/>
                     <Button Content="Удалить" Height="28" Width="112" Canvas.Left="161" Canvas.Top="332" Click="Delete"/>
