@@ -168,6 +168,5 @@ namespace Invert
             }
             return true;
         }
-
     }
 }
